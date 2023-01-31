@@ -45,14 +45,9 @@ disp('starting')
             imwrite(Jregistered,save_path);         
             close
             % save
-            %%
-            figure
-            imshowpair(imresize(eps0,0.1),imresize(Jregistered,0.1))
 %%
 save_path=[path, sprintf('\\Jregistered_%i_crop.tif',i)]
-            imwrite(Jregistered(2000:5000,1:5000,:),save_path);   
-save_path=[path, sprintf('\\Jregistered_%i_crop.tif',0)]
-            imwrite(eps0(2000:5000,1:5000,:),save_path);   
+            imwrite(Jregistered,save_path);   
 
 %%
 
