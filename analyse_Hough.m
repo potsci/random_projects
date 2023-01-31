@@ -1,17 +1,20 @@
 [file,path] = uigetfile('*.png');
 %%
-files=dir([path  '*.png'])
+files=dir([path  '*.tif'])
 files().name
 %%
-i=120
+files
+%%
+i=1
 I=imread([files(i).folder '\' files(i).name]);
 %%
 I=imread([files(i).folder '\' 'square_p_circle_seg_301x301_1.000000e-02.png']);%%
 I=imread([files(i).folder '\' 'square_p_circle_seg_301x301_4.900000e-01.png']);
 %%
-
+I=I(:,:,1);
 
 prop=regionprops(I,"FilledImage",'Circularity','Centroid','Perimeter','Area','Image','BoundingBox','ConvexHull','ConvexImage');
+%%
 rescaled=prop(1).ConvexImage;
 disp('check')
 %figure

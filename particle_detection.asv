@@ -59,25 +59,24 @@ for i = 1:numel(prop)
     y2=round(prop(i).BoundingBox(2)+prop(i).BoundingBox(4));
     x1=round(prop(i).BoundingBox(1));
     x2=round(prop(i).BoundingBox(1)+prop(i).BoundingBox(3));
+    disp(y2)
     if y2>imisze(1)
-        y2=y2-1;
+        y2=y2-1
     end
     if x2>imisze(2)
-        x2=x2-1;
+        x2=x2-1
     end
     if x1-padd<1
-      x1=x1+padd;
-    elseif y1-padd<1
-        y1=y1+padd;
+      x1=x1+padd
+    elseif y1+padd<1
+        y1=y1-padd
     elseif x2+padd>=imisze(2)
-       x2=x2-padd;
+       x2=x2-padd
     elseif y2+padd>=imisze(1)
-       y2=y2-padd;
+       y2=y2-padd
     end
-    edges=subpixelEdges(rescaled(y1-padd:y2+padd,x1-padd:x2+padd),thresh);
-    edges.x=edges.x+x1-padd-1;
-    edges.y=edges.y+y1-padd-1;
-    edges_all=[edges_all edges];
+    edges=subpixelEdges(rescaled(y1-padd:y2+padd,x1-padd:x2+padd),thresh)
+    edges_all=[edges_all edges]
     %toc
     %%
 %     figure
@@ -87,22 +86,9 @@ for i = 1:numel(prop)
     %figure
     %imshow(rescaled(y1-5:y2+5,x1:x2+5))
     %imshow(rescaled)%(y1-5:y2+5,x1:x2+5))
-    visEdges(edges);
+    %visEdges(edges)
 end
 toc
-
-%%
-figure
-scatter(edges.x,edges.y,10,edges.curv,'filled')
-visedges(edges)
-colorbar
-
-
-%%
-%%
-figure
-imshow(rescaled)
-visEdges(edges)
 %%
 prop(i).BoundingBox(2)+prop(i).BoundingBox(4)
 %%
@@ -414,19 +400,7 @@ h=gca
 h.Visible= 'On';
 
 
-%%
-  Alignment(CS,'temp',instrument); %change this skript to make an if else to ask wheter ebsd is good or not
-            load([localpath,'aligname'])
-            disp([localpath,'aligname'])% the last saved path is saved to ebsdname.mat
-            %disp(aligname)            
-            [file_a,path_a] = uigetfile(aligname,'alignment file'); %different variable name, because they need to be different than in the .mat
-            load([path_a '\' file_a]);
-            
-                if path_a~=0
-                    aligname=[path_a,file_a]
-                    save([localpath, 'aligname.mat'],"aligname");    
-                    clear aligname;
-                end
+
 
 
 
