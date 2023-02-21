@@ -24,7 +24,8 @@ import os.path as path
 #%%
 
 #file = Path(askopenfilename(initialdir='I:/EMSoft_files/from_linux', title='Select the file with the EMsoft Masterpattern ouput'))
-file_name="../Nb6_Co7_MC_20_kv_500px.h5"
+
+file_name="Nb6_Co7_MC_20_kv_500px.h5"
 file_name=Path(file_name)
 #%%
 paths=list(file_name.glob('*'))
@@ -33,7 +34,7 @@ paths=list(file_name.glob('*'))
 
 #os.mkdir(file.parent / 'normalised')
 #%%
-f= h5py.File(paths[0])
+f= h5py.File(file_name)
 #%%
 #print(str(file.parts[-1])[:-3])
 #%%
