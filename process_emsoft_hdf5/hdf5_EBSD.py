@@ -4,21 +4,37 @@ Created on Mon Oct 24 15:36:20 2022
 
 @author: berners
 """
-
+import os
+import matplotlib as mpl
+if os.environ.get('DISPLAY','') == '':
+    print('no display found. Using non-interactive Agg backend')
+    mpl.use('Agg')
+import matplotlib.pyplot as pltd
 import h5py
-import tkinter
+#import tkinter
+
+#matplotlib.use('Agg')
+#_tkinter.TclError: no display name and no $DISPLAY environment variable
 from tkinter.filedialog import askopenfilename
 from pathlib import *
 #import re
 import cv2 as cv2
 import numpy as np
+import os.path as path
 #%%
 
-file = Path(askopenfilename(initialdir='I:/EMSoft_files/from_linux', title='Select the file with the EMsoft Masterpattern ouput'))
-#paths=list(file.parent.glob('**/pano*.tif'))
+#file = Path(askopenfilename(initialdir='I:/EMSoft_files/from_linux', title='Select the file with the EMsoft Masterpattern ouput'))
+
+file_name="Nb6_Co7_MC_20_kv_500px.h5"
+file_name=Path(file_name)
+#%%
+paths=list(file_name.glob('*'))
+
+
+
 #os.mkdir(file.parent / 'normalised')
 #%%
-f= h5py.File(file)
+f= h5py.File(file_name)
 #%%
 #print(str(file.parts[-1])[:-3])
 #%%
@@ -27,6 +43,7 @@ f= h5py.File(file)
 
 #%%
 print(list(f.keys()))
+#%%
 gr=f['EMData']
 print(gr.keys())
 s_gr=gr['EBSD']
