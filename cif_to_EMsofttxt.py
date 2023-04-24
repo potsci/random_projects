@@ -4,10 +4,13 @@ Created on Fri Oct 21 15:21:05 2022
 
 @author: lukas
 """
+#%%
 import tkinter
-from tkinter.filedialog import askopenfilename
+# from tkinter.filedialog import askopenfilename
 import CifFile #https://pypi.org/project/PyCifRW/4.3/
-cifPath=askopenfilename()
+#cifPath=askopenfilename()
+cifPath="../../EMSoft_Lukas/xtalfiles/C15.cif"
+#%%
 cF= CifFile.ReadCif(cifPath)
 
 #%%
@@ -18,14 +21,14 @@ order=block.GetItemOrder()
 lp=block.GetLoop('_atom_site_label')
 print(lp[0])
 #%%
-var_all=block.get('_chemical_name_common')
+chem_name=block.get('_chemical_name_common')
 #%%
 bl_order=cF.block_input_order
 
 #%%
 print(block.items())
 #%%
-with open(f'{block.get('_chemical_name_common')}.txt')
+#with open(f'{block.get("_chemical_name_common")}.txt')
 
 #%%
 group_number_ls=['_space_group_IT_number','_symmetry_Int_Tables_number']
@@ -82,3 +85,4 @@ with open(f'{chem_name}.txt','w') as f:
 
 #%%
 print('7 \n 7')
+# %%
