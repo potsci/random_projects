@@ -17,7 +17,4 @@ import kikuchipy as kp
 
 
 
-
-
-
 # %%
