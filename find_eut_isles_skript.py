@@ -12,7 +12,20 @@ from skimage.measure import label, regionprops, regionprops_table
 from skimage.morphology import (erosion, dilation, disk)
 from skimage import measure
 
-
+def rle(inarray):
+        """ run length encoding. Partial credit to R rle function. 
+            Multi datatype arrays catered for including non Numpy
+            returns: tuple (runlengths, startpositions, values) """
+        ia = np.asarray(inarray)                # force numpy
+        n = len(ia)
+        if n == 0: 
+            return (None, None, None)
+        else:
+            y = ia[1:] != ia[:-1]               # pairwise unequal (string safe)
+            i = np.append(np.where(y), n - 1)   # must include last element posi
+            z = np.diff(np.append(-1, i))       # run lengths
+            p = np.cumsum(np.append(0, z))[:-1] # positions
+            return(z, p, ia[i])
 
 
 # read in the image and determine the parameters for dilton
@@ -21,17 +34,18 @@ filepath.joinpath('original_segmentation').mkdir(parents=True,exist_ok=True)
 filepath.joinpath('full_segmentation').mkdir(parents=True,exist_ok=True)
 filepath.joinpath('only_eutectics').mkdir(parents=True,exist_ok=True)
 filepath.joinpath('primary_mg').mkdir(parents=True,exist_ok=True)
+filepath.joinpath('dendrites').mkdir(parents=True,exist_ok=True)
 print(list(filepath.glob('**/bnw_conv.png')))
 # fp1=filepath.paresn[1]
 # croppath1.mkdir(parents=True, exist_ok=True)
 for fp in filepath.glob(('**/bnw_conv.png')):
     img=io.imread(fp)
     label_img = label(invert(img))
-    properties=['axis_minor_length']
+    properties=['axis_minor_length','area_convex']
     props=measure.regionprops_table(label_img,img,properties=properties)
     df=pd.DataFrame(props)
     mean_width=df.loc[(df['area_convex']>5),'axis_minor_length'].mean()
-    dil_iter=(mean_width/6)*1.5
+    dil_iter=(mean_width/6)*1.8
     dil_iter=int(dil_iter)
     dilation2=scipy.ndimage.binary_dilation(img==0,disk(3),iterations=dil_iter)
     erosion2=scipy.ndimage.binary_dilation(invert(dilation2),disk(3),iterations=dil_iter+1)
@@ -45,11 +59,19 @@ for fp in filepath.glob(('**/bnw_conv.png')):
     plt.imsave(fp.parents[1].joinpath('original_segmentation').joinpath(f'{fp.parents[0].stem}_segmented.png'),img,cmap='viridis')
     plt.imsave(fp.parents[1].joinpath('full_segmentation').joinpath(f'{fp.parents[0].stem}_total_ms.png'),total_ms,cmap='viridis')
     plt.imsave(fp.parents[1].joinpath('only_eutectics').joinpath(f'{fp.parents[0].stem}_eutectics.png'),mg_eut_filtered,cmap='viridis')
-    plt.imsave(fp.parents[1].joinpath('primary_mg').joinpath(f'{fp.parents[0].stem}_mg_primary.png'),mg_primary,cmap='viridis')    
-
-
-
-
-
+    plt.imsave(fp.parents[1].joinpath('primary_mg').joinpath(f'{fp.parents[0].stem}_mg_primary.png'),total_ms==0,cmap='viridis')    
+    plt.imsave(fp.parents[1].joinpath('dendrites').joinpath(f'{fp.parents[0].stem}_dendrites.png'),mg_primary,cmap='viridis')
+    for i in range(0,len(total_ms)):
+        [width,pos,value]=rle(img[1,:])
+        l_width.append(width)
+        l_pos.append(pos)
+        l_value.append(value)
+    
+    np.savetxt(fp.parents[1].joinpath('full_segmentation').joinpath(f'{fp.parents[0].stem}_total_ms.csv'),np.transpose([width,pos,value]),delimiter=';',header='widths;pos;value;',comments='')
+    frac_laves=np.count_nonzero(total_ms==1)/(img.shape[0]*img.shape[1])
+    frac_mg=np.count_nonzero(total_ms==0)/(img.shape[0]*img.shape[1])
+    frac_mg_eut=np.count_nonzero(total_ms==2)/(img.shape[0]*img.shape[1])
+    np.savetxt(fp.parents[1].joinpath('full_segmentation').joinpath(f'{fp.parents[0].stem}_phase_fraction.csv'),[frac_laves,frac_mg,frac_mg_eut],delimiter=';',header='frac_laves;frac_mg;frac_mg_eut',comments='')
+    
 
 
