@@ -3,6 +3,7 @@ import numpy as np
 import scipy
 from pathlib import *
 import pandas as pd
+import math
 
 from skimage import util 
 from skimage import io
@@ -69,27 +70,27 @@ for fp in filepath.glob(('**/bnw_conv.png')):
     l_pos=[]    
     l_value=[]
     ##x
-    aspect=total_ms.shape[0]/total_ms.shape[1]
+    aspect=total_ms.shape[1]/total_ms.shape[0]
     if aspect >=1:
-    step_x=math.floor(max((4000,2000))/10)
-    step_y=math.floor(step_x/aspect)
-    n_x=10
-    n_y=math.floor(n_x/aspect)
+        step_x=math.floor(max(total_ms.shape)/10)
+        step_y=math.floor(step_x/aspect)
+        n_x=10
+        n_y=math.floor(n_x/aspect)
     else:
-        step_y=math.floor(max((4000,2000))/10)
-        step_x=math.floor(step_x/aspect)
+        step_y=math.floor(max(total_ms.shape)/10)
+        step_x=math.floor(step_y*aspect)
         n_y=10
-        n_x=math.floor(n_y/aspect)
+        n_x=math.floor(n_y*aspect)
     
 
-    for i in range(0,nx):
-        [width,pos,value]=rle(total_ms[step_x*i,:])
+    for i in range(0,n_x):
+        [width,pos,value]=rle(total_ms[:,step_x*i])
         l_width.append(width)
         l_pos.append(pos)
         l_value.append(value)
     ##y
     for i in range(0,n_y):
-        [width,pos,value]=rle(total_ms[:,step_y*i])
+        [width,pos,value]=rle(total_ms[step_y*i,:])
         l_width.append(width)
         l_pos.append(pos)
         l_value.append(value)

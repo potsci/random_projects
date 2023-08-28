@@ -24,7 +24,7 @@
 #SBATCH --account=rwth1308
 
 ##Memory need / node
-#SBATCH --mem=32G
+#SBATCH --mem=16G
 
 #number of threads
 #SBATCH --cpus-per-task=1
@@ -35,7 +35,7 @@
 
 ## execution time in [hours]:[minutes]:[seconds]
 ## recommended: less than 24:00
-#SBATCH --time=00:10:00 ###36
+#SBATCH --time=00:30:00 ###36
 #####SBATCH --time=1-00:00:00
 
 ############################################### 

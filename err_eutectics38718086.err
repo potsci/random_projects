@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/rwthfs/rz/cluster/home/mz071159/random_projects_lukas/find_eut_isles_skript.py", line 87, in <module>
+    [width,pos,value]=rle(total_ms[step_x*i,:])
+IndexError: index 2571 is out of bounds for axis 0 with size 1866
+srun: error: ncm0085: task 0: Exited with exit code 1
