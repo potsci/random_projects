@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/rwthfs/rz/cluster/home/mz071159/random_projects_lukas/find_eut_isles_skript.py", line 66, in <module>
+    l_width.append(width)
+NameError: name 'l_width' is not defined
+srun: error: ncm0145: task 0: Exited with exit code 1

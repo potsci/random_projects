@@ -1,0 +1,17 @@
+/home/mz071159/miniconda3/lib/python3.9/site-packages/numpy/core/fromnumeric.py:43: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  result = getattr(asarray(obj), method)(*args, **kwds)
+Traceback (most recent call last):
+  File "/home/mz071159/miniconda3/lib/python3.9/site-packages/numpy/lib/npyio.py", line 1590, in savetxt
+    v = format % tuple(row) + newline
+TypeError: only size-1 arrays can be converted to Python scalars
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/rwthfs/rz/cluster/home/mz071159/random_projects_lukas/find_eut_isles_skript.py", line 84, in <module>
+    np.savetxt(fp.parents[1].joinpath('full_segmentation').joinpath(f'{fp.parents[0].stem}_total_ms.csv'),np.transpose([l_width,l_pos,l_value]),delimiter=';',header='widths;pos;value;',comments='')
+  File "<__array_function__ internals>", line 180, in savetxt
+  File "/home/mz071159/miniconda3/lib/python3.9/site-packages/numpy/lib/npyio.py", line 1592, in savetxt
+    raise TypeError("Mismatch between array dtype ('%s') and "
+TypeError: Mismatch between array dtype ('object') and format specifier ('%.18e;%.18e;%.18e')
+srun: error: ncm0148: task 0: Exited with exit code 1
