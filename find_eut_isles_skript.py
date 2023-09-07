@@ -4,6 +4,7 @@ import scipy
 from pathlib import *
 import pandas as pd
 import math
+import re
 
 from skimage import util 
 from skimage import io
@@ -58,12 +59,20 @@ for fp in filepath.glob(('**/bnw_conv.png')):
     total_ms[img==0]=1
     total_ms[mg_eut_filtered]=2
     
+
+
+    fp.parents[1].joinpath('original_segmentation').joinpath(re.findall('.*(?=c\d\d\d\_r\d\d\d)',fp.parents[0].stem)[0]).mkdir(parents=True,exist_ok=True)
+    fp.parents[1].joinpath('full_segmentation').joinpath(re.findall('.*(?=c\d\d\d\_r\d\d\d)',fp.parents[0].stem)[0]).mkdir(parents=True,exist_ok=True)
+    fp.parents[1].joinpath('only_eutectics').joinpath(re.findall('.*(?=c\d\d\d\_r\d\d\d)',fp.parents[0].stem)[0]).mkdir(parents=True,exist_ok=True)
+    fp.parents[1].joinpath('primary_mg').joinpath(re.findall('.*(?=c\d\d\d\_r\d\d\d)',fp.parents[0].stem)[0]).mkdir(parents=True,exist_ok=True)
+    fp.parents[1].joinpath('dendrites').joinpath(re.findall('.*(?=c\d\d\d\_r\d\d\d)',fp.parents[0].stem)[0]).mkdir(parents=True,exist_ok=True)
+
     ## save images
-    plt.imsave(fp.parents[1].joinpath('original_segmentation').joinpath(f'{fp.parents[0].stem}_segmented.png'),img,cmap='viridis')
-    plt.imsave(fp.parents[1].joinpath('full_segmentation').joinpath(f'{fp.parents[0].stem}_total_ms.png'),total_ms,cmap='viridis')
-    plt.imsave(fp.parents[1].joinpath('only_eutectics').joinpath(f'{fp.parents[0].stem}_eutectics.png'),mg_eut_filtered,cmap='viridis')
-    plt.imsave(fp.parents[1].joinpath('primary_mg').joinpath(f'{fp.parents[0].stem}_mg_primary.png'),total_ms==0,cmap='viridis')    
-    plt.imsave(fp.parents[1].joinpath('dendrites').joinpath(f'{fp.parents[0].stem}_dendrites.png'),mg_primary,cmap='viridis')
+    io.imsave(fp.parents[1].joinpath('original_segmentation').joinpath(re.findall('.*(?=c\d\d\d\_r\d\d\d)',fp.parents[0].stem)[0]).joinpath(f'{fp.parents[0].stem}_segmented.png'),img!=0,bits=1)
+    plt.imsave(fp.parents[1].joinpath('full_segmentation').joinpath(re.findall('.*(?=c\d\d\d\_r\d\d\d)',fp.parents[0].stem)[0]).joinpath(f'{fp.parents[0].stem}_total_ms.png'),total_ms,cmap='binary')
+    io.imsave(fp.parents[1].joinpath('only_eutectics').joinpath(re.findall('.*(?=c\d\d\d\_r\d\d\d)',fp.parents[0].stem)[0]).joinpath(f'{fp.parents[0].stem}_eutectics.png'),mg_eut_filtered,bits=1)
+    io.imsave(fp.parents[1].joinpath('primary_mg').joinpath(re.findall('.*(?=c\d\d\d\_r\d\d\d)',fp.parents[0].stem)[0]).joinpath(f'{fp.parents[0].stem}_mg_primary.png'),total_ms==0,bits=1)    
+    io.imsave(fp.parents[1].joinpath('dendrites').joinpath(re.findall('.*(?=c\d\d\d\_r\d\d\d)',fp.parents[0].stem)[0]).joinpath(f'{fp.parents[0].stem}_dendrites.png'),mg_primary,bits=1)
     
     ## get some additional parameters (widht of struts and phase fraction)
     l_width=[]  
@@ -95,12 +104,12 @@ for fp in filepath.glob(('**/bnw_conv.png')):
         l_pos.append(pos)
         l_value.append(value)
     
-    np.savetxt(fp.parents[1].joinpath('full_segmentation').joinpath(f'{fp.parents[0].stem}_total_ms.csv'),np.transpose([np.concatenate(l_width),np.concatenate(l_pos),np.concatenate(l_value)]),delimiter=';',header='widths;pos;value;',comments='')
+    np.savetxt(fp.parents[1].joinpath('full_segmentation').joinpath(re.findall('.*(?=c\d\d\d\_r\d\d\d)',fp.parents[0].stem)[0]).joinpath(f'{fp.parents[0].stem}_total_ms.csv'),np.transpose([np.concatenate(l_width),np.concatenate(l_pos),np.concatenate(l_value)]),delimiter=';',header='widths;pos;value;',comments='')
 
     frac_laves=np.count_nonzero(total_ms==1)/(img.shape[0]*img.shape[1])
     frac_mg=np.count_nonzero(total_ms==0)/(img.shape[0]*img.shape[1])
     frac_mg_eut=np.count_nonzero(total_ms==2)/(img.shape[0]*img.shape[1])
-    np.savetxt(fp.parents[1].joinpath('full_segmentation').joinpath(f'{fp.parents[0].stem}_phase_fraction.csv'),[frac_laves,frac_mg,frac_mg_eut],delimiter=';',header='frac_laves;frac_mg;frac_mg_eut',comments='')
+    np.savetxt(fp.parents[1].joinpath('full_segmentation').joinpath(re.findall('.*(?=c\d\d\d\_r\d\d\d)',fp.parents[0].stem)[0]).joinpath(f'{fp.parents[0].stem}_phase_fraction.csv'),[frac_laves,frac_mg,frac_mg_eut],delimiter=';',header='frac_laves;frac_mg;frac_mg_eut',comments='')
 
 
 

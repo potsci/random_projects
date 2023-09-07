@@ -1,0 +1,73 @@
+Thu Sep  7 13:11:07 CEST 2023
+[PosixPath('/home/mz071159/width_struts/results/stichings/dendrites/50_45_3mm_yolo_eps5_leo_3stitched-0__stitched_after_seg.png'), PosixPath('/home/mz071159/width_struts/results/stichings/dendrites/pano50_45_eps5_leo_5mm_3_stitch__stitched_after_seg.png'), PosixPath('/home/mz071159/width_struts/results/stichings/dendrites/pano50_45_4mm_3_eps5_000_stitch__stitched_after_seg.png'), PosixPath('/home/mz071159/width_struts/results/stichings/dendrites/50_45_head_eps5_yolo_pano__stitched_after_seg.png'), PosixPath('/home/mz071159/width_struts/results/stichings/only_eutectics/50_45_3mm_yolo_eps5_leo_3stitched-0__stitched_after_seg.png'), PosixPath('/home/mz071159/width_struts/results/stichings/only_eutectics/pano50_45_eps5_leo_5mm_3_stitch__stitched_after_seg.png'), PosixPath('/home/mz071159/width_struts/results/stichings/only_eutectics/pano50_45_4mm_3_eps5_000_stitch__stitched_after_seg.png'), PosixPath('/home/mz071159/width_struts/results/stichings/only_eutectics/50_45_head_eps5_yolo_pano__stitched_after_seg.png'), PosixPath('/home/mz071159/width_struts/results/stichings/primary_mg/50_45_3mm_yolo_eps5_leo_3stitched-0__stitched_after_seg.png'), PosixPath('/home/mz071159/width_struts/results/stichings/primary_mg/pano50_45_eps5_leo_5mm_3_stitch__stitched_after_seg.png'), PosixPath('/home/mz071159/width_struts/results/stichings/primary_mg/pano50_45_4mm_3_eps5_000_stitch__stitched_after_seg.png'), PosixPath('/home/mz071159/width_struts/results/stichings/primary_mg/50_45_head_eps5_yolo_pano__stitched_after_seg.png'), PosixPath('/home/mz071159/width_struts/results/stichings/original_segmentation/50_45_3mm_yolo_eps5_leo_3stitched-0__stitched_after_seg.png'), PosixPath('/home/mz071159/width_struts/results/stichings/original_segmentation/pano50_45_eps5_leo_5mm_3_stitch__stitched_after_seg.png'), PosixPath('/home/mz071159/width_struts/results/stichings/original_segmentation/pano50_45_4mm_3_eps5_000_stitch__stitched_after_seg.png'), PosixPath('/home/mz071159/width_struts/results/stichings/original_segmentation/50_45_head_eps5_yolo_pano__stitched_after_seg.png'), PosixPath('/home/mz071159/width_struts/results/stichings/stichings/dendrites/50_45_3mm_yolo_eps5_leo_3stitched-0__stitched_after_seg.png'), PosixPath('/home/mz071159/width_struts/results/stichings/stichings/dendrites/pano50_45_eps5_leo_5mm_3_stitch__stitched_after_seg.png'), PosixPath('/home/mz071159/width_struts/results/stichings/stichings/dendrites/pano50_45_4mm_3_eps5_000_stitch__stitched_after_seg.png'), PosixPath('/home/mz071159/width_struts/results/stichings/stichings/dendrites/50_45_head_eps5_yolo_pano__stitched_after_seg.png'), PosixPath('/home/mz071159/width_struts/results/stichings/stichings/only_eutectics/50_45_3mm_yolo_eps5_leo_3stitched-0__stitched_after_seg.png'), PosixPath('/home/mz071159/width_struts/results/stichings/stichings/only_eutectics/pano50_45_eps5_leo_5mm_3_stitch__stitched_after_seg.png'), PosixPath('/home/mz071159/width_struts/results/stichings/stichings/only_eutectics/pano50_45_4mm_3_eps5_000_stitch__stitched_after_seg.png'), PosixPath('/home/mz071159/width_struts/results/stichings/stichings/only_eutectics/50_45_head_eps5_yolo_pano__stitched_after_seg.png'), PosixPath('/home/mz071159/width_struts/results/stichings/stichings/primary_mg/50_45_3mm_yolo_eps5_leo_3stitched-0__stitched_after_seg.png'), PosixPath('/home/mz071159/width_struts/results/stichings/stichings/primary_mg/pano50_45_eps5_leo_5mm_3_stitch__stitched_after_seg.png'), PosixPath('/home/mz071159/width_struts/results/stichings/stichings/primary_mg/pano50_45_4mm_3_eps5_000_stitch__stitched_after_seg.png'), PosixPath('/home/mz071159/width_struts/results/stichings/stichings/primary_mg/50_45_head_eps5_yolo_pano__stitched_after_seg.png'), PosixPath('/home/mz071159/width_struts/results/stichings/stichings/original_segmentation/50_45_3mm_yolo_eps5_leo_3stitched-0__stitched_after_seg.png'), PosixPath('/home/mz071159/width_struts/results/stichings/stichings/original_segmentation/pano50_45_eps5_leo_5mm_3_stitch__stitched_after_seg.png'), PosixPath('/home/mz071159/width_struts/results/stichings/stichings/original_segmentation/pano50_45_4mm_3_eps5_000_stitch__stitched_after_seg.png'), PosixPath('/home/mz071159/width_struts/results/stichings/stichings/original_segmentation/50_45_head_eps5_yolo_pano__stitched_after_seg.png'), PosixPath('/home/mz071159/width_struts/results/stichings/stichings/full_segmentation/50_45_3mm_yolo_eps5_leo_3stitched-0__stitched_after_seg.png'), PosixPath('/home/mz071159/width_struts/results/stichings/stichings/full_segmentation/pano50_45_eps5_leo_5mm_3_stitch__stitched_after_seg.png'), PosixPath('/home/mz071159/width_struts/results/stichings/stichings/full_segmentation/pano50_45_4mm_3_eps5_000_stitch__stitched_after_seg.png'), PosixPath('/home/mz071159/width_struts/results/stichings/stichings/full_segmentation/50_45_head_eps5_yolo_pano__stitched_after_seg.png'), PosixPath('/home/mz071159/width_struts/results/stichings/full_segmentation/50_45_3mm_yolo_eps5_leo_3stitched-0__stitched_after_seg.png'), PosixPath('/home/mz071159/width_struts/results/stichings/full_segmentation/pano50_45_eps5_leo_5mm_3_stitch__stitched_after_seg.png'), PosixPath('/home/mz071159/width_struts/results/stichings/full_segmentation/pano50_45_4mm_3_eps5_000_stitch__stitched_after_seg.png'), PosixPath('/home/mz071159/width_struts/results/stichings/full_segmentation/50_45_head_eps5_yolo_pano__stitched_after_seg.png')]
+50_45_3mm_yolo_eps5_leo_3stitched-0
+(24000, 16000)
+pano50_45_eps5_leo_5mm_3_stitch
+(16000, 16000)
+pano50_45_4mm_3_eps5_000_stitch
+(24000, 16000)
+(12000, 16000)
+50_45_3mm_yolo_eps5_leo_3stitched-0
+(24000, 16000)
+pano50_45_eps5_leo_5mm_3_stitch
+(16000, 16000)
+pano50_45_4mm_3_eps5_000_stitch
+(24000, 16000)
+(12000, 16000)
+50_45_3mm_yolo_eps5_leo_3stitched-0
+(24000, 16000)
+pano50_45_eps5_leo_5mm_3_stitch
+(16000, 16000)
+pano50_45_4mm_3_eps5_000_stitch
+(24000, 16000)
+(12000, 16000)
+50_45_3mm_yolo_eps5_leo_3stitched-0
+(24000, 16000)
+pano50_45_eps5_leo_5mm_3_stitch
+(16000, 16000)
+pano50_45_4mm_3_eps5_000_stitch
+(24000, 16000)
+(12000, 16000)
+50_45_3mm_yolo_eps5_leo_3stitched-0
+(24000, 16000)
+pano50_45_eps5_leo_5mm_3_stitch
+(16000, 16000)
+pano50_45_4mm_3_eps5_000_stitch
+(24000, 16000)
+(12000, 16000)
+50_45_3mm_yolo_eps5_leo_3stitched-0
+(24000, 16000)
+pano50_45_eps5_leo_5mm_3_stitch
+(16000, 16000)
+pano50_45_4mm_3_eps5_000_stitch
+(24000, 16000)
+(12000, 16000)
+50_45_3mm_yolo_eps5_leo_3stitched-0
+(24000, 16000)
+pano50_45_eps5_leo_5mm_3_stitch
+(16000, 16000)
+pano50_45_4mm_3_eps5_000_stitch
+(24000, 16000)
+(12000, 16000)
+50_45_3mm_yolo_eps5_leo_3stitched-0
+(24000, 16000)
+pano50_45_eps5_leo_5mm_3_stitch
+(16000, 16000)
+pano50_45_4mm_3_eps5_000_stitch
+(24000, 16000)
+(12000, 16000)
+50_45_3mm_yolo_eps5_leo_3stitched-0
+(24000, 16000)
+pano50_45_eps5_leo_5mm_3_stitch
+(16000, 16000)
+pano50_45_4mm_3_eps5_000_stitch
+(24000, 16000)
+(12000, 16000)
+50_45_3mm_yolo_eps5_leo_3stitched-0
+(24000, 16000)
+pano50_45_eps5_leo_5mm_3_stitch
+(16000, 16000)
+pano50_45_4mm_3_eps5_000_stitch
+(24000, 16000)
+(12000, 16000)
+Thu Sep  7 13:23:36 CEST 2023

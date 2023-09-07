@@ -1,0 +1,2 @@
+srun: error: ncm0408: task 0: Out Of Memory
+slurmstepd: error: Detected 1 oom-kill event(s) in StepId=38978546.0. Some of your processes may have been killed by the cgroup out-of-memory handler.

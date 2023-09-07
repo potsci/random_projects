@@ -1,5 +1,0 @@
-Traceback (most recent call last):
-  File "/rwthfs/rz/cluster/home/mz071159/random_projects_lukas/find_eut_isles_skript.py", line 79, in <module>
-    [width,pos,value]=rle(total_ms[:,i])
-IndexError: index 1108 is out of bounds for axis 1 with size 1108
-srun: error: ncm0148: task 0: Exited with exit code 1

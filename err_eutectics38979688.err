@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/rwthfs/rz/cluster/home/mz071159/random_projects_lukas/euler_numbers.py", line 23, in <module>
+    for key in df['name'].values:
+NameError: name 'df' is not defined
+srun: error: ncm0128: task 0: Exited with exit code 1

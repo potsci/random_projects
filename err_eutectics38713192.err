@@ -1,5 +1,0 @@
-srun: error: ncm0967: task 0: Exited with exit code 1
-  File "/rwthfs/rz/cluster/home/mz071159/random_projects_lukas/find_eut_isles_skript.py", line 13
-    from skimage imprt measure
-                 ^
-SyntaxError: invalid syntax

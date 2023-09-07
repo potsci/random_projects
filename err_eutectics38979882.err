@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/rwthfs/rz/cluster/home/mz071159/random_projects_lukas/euler_numbers.py", line 42, in <module>
+    e8 = euler_number(I_bin, connectivity=2)
+  File "/home/mz071159/.local/lib/python3.9/site-packages/skimage/measure/_regionprops_utils.py", line 161, in euler_number
+    raise NotImplementedError(
+NotImplementedError: For 3D images, Euler number is implemented for connectivities 1 and 3 only
+srun: error: ncm0128: task 0: Exited with exit code 1

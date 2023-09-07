@@ -1,5 +1,0 @@
-srun: error: ncm0021: task 0: Exited with exit code 1
-  File "/rwthfs/rz/cluster/home/mz071159/random_projects_lukas/find_eut_isles_skript.py", line 74
-    step_x=math.floor(max((4000,2000))/10)
-    ^
-IndentationError: expected an indented block
