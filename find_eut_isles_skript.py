@@ -68,13 +68,13 @@ for fp in filepath.glob(('**/bnw_conv.png')):
     fp.parents[1].joinpath('dendrites').joinpath(re.findall('.*(?=c\d\d\d\_r\d\d\d)',fp.parents[0].stem)[0]).mkdir(parents=True,exist_ok=True)
 
     ## save images
-    io.imsave(fp.parents[1].joinpath('original_segmentation').joinpath(re.findall('.*(?=c\d\d\d\_r\d\d\d)',fp.parents[0].stem)[0]).joinpath(f'{fp.parents[0].stem}_segmented.png'),img!=0,bits=1)
+    # io.imsave(fp.parents[1].joinpath('original_segmentation').joinpath(re.findall('.*(?=c\d\d\d\_r\d\d\d)',fp.parents[0].stem)[0]).joinpath(f'{fp.parents[0].stem}_segmented.png'),img!=0,bits=1)
     plt.imsave(fp.parents[1].joinpath('full_segmentation').joinpath(re.findall('.*(?=c\d\d\d\_r\d\d\d)',fp.parents[0].stem)[0]).joinpath(f'{fp.parents[0].stem}_total_ms.png'),total_ms,cmap='binary')
-    io.imsave(fp.parents[1].joinpath('only_eutectics').joinpath(re.findall('.*(?=c\d\d\d\_r\d\d\d)',fp.parents[0].stem)[0]).joinpath(f'{fp.parents[0].stem}_eutectics.png'),mg_eut_filtered,bits=1)
-    io.imsave(fp.parents[1].joinpath('primary_mg').joinpath(re.findall('.*(?=c\d\d\d\_r\d\d\d)',fp.parents[0].stem)[0]).joinpath(f'{fp.parents[0].stem}_mg_primary.png'),total_ms==0,bits=1)    
-    io.imsave(fp.parents[1].joinpath('dendrites').joinpath(re.findall('.*(?=c\d\d\d\_r\d\d\d)',fp.parents[0].stem)[0]).joinpath(f'{fp.parents[0].stem}_dendrites.png'),mg_primary,bits=1)
+    # io.imsave(fp.parents[1].joinpath('only_eutectics').joinpath(re.findall('.*(?=c\d\d\d\_r\d\d\d)',fp.parents[0].stem)[0]).joinpath(f'{fp.parents[0].stem}_eutectics.png'),mg_eut_filtered,bits=1)
+    # io.imsave(fp.parents[1].joinpath('primary_mg').joinpath(re.findall('.*(?=c\d\d\d\_r\d\d\d)',fp.parents[0].stem)[0]).joinpath(f'{fp.parents[0].stem}_mg_primary.png'),total_ms==0,bits=1)    
+    # io.imsave(fp.parents[1].joinpath('dendrites').joinpath(re.findall('.*(?=c\d\d\d\_r\d\d\d)',fp.parents[0].stem)[0]).joinpath(f'{fp.parents[0].stem}_dendrites.png'),mg_primary,bits=1)
     
-    ## get some additional parameters (widht of struts and phase fraction)
+    # ## get some additional parameters (widht of struts and phase fraction)
     l_width=[]  
     l_pos=[]    
     l_value=[]

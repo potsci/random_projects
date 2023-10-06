@@ -30,13 +30,17 @@ for png in png_list:
             print(key)
             width=df[df['name']==key].width.values[0]
             height=df[df['name']==key].height.values[0]
-            label=df[df['name']==key].label.values[0]
+            label_n=df[df['name']==key].label.values[0]
+            print(label)
+            print(png.stem)
             break
     I=I[:width,:height]
     print(I.shape)
     if key != 'only_eutectics':
         I_bin=I[:,:]<=100
-   
+    else:
+        I_bin=I[:,:]>100
+    print(I_bin.shape)
 
     # I_bin=I[:,:]>=150 # this will fail for the full segmentation
 
@@ -49,4 +53,4 @@ for png in png_list:
     holes_nb_8 = object_nb_8 - e8
 
     with open('euler_numbers.txt','a') as f:
-        f.write(f'{label};{png.parent.stem};{e4};{holes_nb_4};{object_nb_4};{e8};{holes_nb_8};{object_nb_8} \n')
+        f.write(f'{label_n};{png.parent.stem};{e4};{holes_nb_4};{object_nb_4};{e8};{holes_nb_8};{object_nb_8} \n')
